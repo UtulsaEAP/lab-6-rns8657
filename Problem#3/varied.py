@@ -1,12 +1,15 @@
 def process_input(input_string):
-      # Split into separate strings
-
+   # Split into separate strings
+    tokens = input_string.split()
     # Convert strings to floats
-    
+    data = []
+    for i in range (len(tokens)):
+        data.append(float(tokens[i]))
+        
 
     # Get max and average
-    max_value = 
-    average_value = 
+    max_value = max(data)
+    average_value = sum(data) / len(data)
     return max_value, average_value
 
 if __name__ == "__main__":

@@ -1,5 +1,9 @@
 def in_order(nums):
-    # Type your code here.
+    for i in range (len(nums)):
+        if (nums > nums+1):
+            return False
+        return True
+
     
 if __name__ == '__main__':
     # Test out-of-order example
