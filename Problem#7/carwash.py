@@ -1,11 +1,20 @@
 def calculate_car_wash_price(service_choice1, service_choice2):
-    services = {'Air freshener': 1, 'Rain repellent': 2, 'Tire shine': 2, 'Wax': 3, 'Vacuum': 5}
+    services = {'Air freshener': 1, 'Rain repellent': 2, 'Tire shine': 2, 'Wax': 3, 'Vacuum': 5, '-': 0}
     base_wash = 10
     total = 0
     
-    price1 = services.get(service_choice1)
-    price2 = services.get(service_choice2)
-    print("ZyCar Wash \n " + "Base car wash - $10 \n" + service_choice1 + " - $" + str(price1) + "\n" + service_choice2 + " - $" + str(price2) + "\n" + "-----" + "\n" + "Total price: " + str(price1 + price2 + 10))
+    total += base_wash + services[service_choice1] + services[service_choice2]
+    
+    print('ZyCar Wash')
+    print('Base car wash - $10')
+    if service_choice1 != '-':
+        print(service_choice1 +' - $'+ str(services[service_choice1]))
+    if service_choice2 != '-':
+        print(service_choice2 +' - $'+ str(services[service_choice2]))
+    print('-----')
+    print('Total price: $'+ str(total))
+
+
     
 if __name__ == '__main__':
     # Get user input for service choices

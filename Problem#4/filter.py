@@ -12,8 +12,11 @@ def process_and_print(input_string):
     data.sort(reverse = True)
     # Print sorted integers
     string = ""
-    for i in range(len(data) ):
-      string += str(data[i]) + " "
+    for i in range(len(data) -1 ):
+      if (i == len(data) - 1):
+         string += str(data(i))
+      else:   
+        string += str(data[i]) + ""
     print(string)
 
 if __name__ == "__main__":

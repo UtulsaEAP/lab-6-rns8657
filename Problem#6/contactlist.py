@@ -1,13 +1,21 @@
 def process_user_contacts(user_input):
-    user_contacts = user_input
-    tokens = user_contacts.split()
+    user_contacts = {}
 
-    # Get contact name from input, output contact's phone number
-    contact_name = input("Enter the contact name: ")
+    user_input = user_input.replace(" ", ",") 
+
+    split_input = user_input.split(',') 
+   
+    for i in range(0, len(split_input), 2):
+        name = split_input[i]                   
+        phone_number = split_input[i + 1]      
+        user_contacts[name] = phone_number      
     
-    for i in range (len(tokens)):
-        if(tokens[i] == contact_name):
-            print(tokens[i+1])
+    contact_name = input("Enter the contact name: ")
+    if contact_name in user_contacts:
+        print(user_contacts[contact_name])         
+    else:
+        print("Contact not found.")
+    
    
 if __name__ == '__main__':
     # Get input for word pairs
